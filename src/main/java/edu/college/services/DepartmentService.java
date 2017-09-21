@@ -42,4 +42,9 @@ public class DepartmentService implements IDepartmentService{
 		return departmentDAO.departmentExists(name);
 	}
 
+	public List<Department> bulkDeleteDepartments(List<Department> departments) {
+		return departmentDAO.bulkDeleteDepartments(departments);
+		
+	}
+
 }

@@ -1,5 +1,6 @@
 package edu.college.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Named;
@@ -64,6 +65,16 @@ public class DepartmentDAO implements IDepartmentDAO{
 		String hql = "from Department as dept where dept.departmentName = ?";
 		int count = entityManager.createQuery(hql).setParameter(1, name).getResultList().size();
 		return count>0?true:false;
+	}
+
+	public List<Department> bulkDeleteDepartments(List<Department> departments) {
+		List<Integer> ids = new ArrayList<Integer>();
+		for(Department d: departments)
+			ids.add(d.getDepartmentId());
+		String hql = "delete from Department d where d.departmentId in (:list)";
+		
+			entityManager.createQuery(hql).setParameter("list", ids).executeUpdate();
+		return getAllDepartments();
 	}
 	
 

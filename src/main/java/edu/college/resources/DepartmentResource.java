@@ -1,5 +1,7 @@
 package edu.college.resources;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -51,6 +53,14 @@ public class DepartmentResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateDepartment(Department department){
 		return Response.ok(departmentService.updateDepartment(department)).build();
+	}
+	
+	@DELETE
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response bulkDelete(List<Department> departments) {
+		
+		return Response.ok(departmentService.bulkDeleteDepartments(departments)).build();
 	}
 	
 	@DELETE

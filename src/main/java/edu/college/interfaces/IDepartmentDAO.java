@@ -12,4 +12,5 @@ public interface IDepartmentDAO {
 	Department updateDepartment(Department department);
 	void deleteDepartment(int id);
 	boolean departmentExists(String name);
+	List<Department> bulkDeleteDepartments(List<Department> departments);
 }
