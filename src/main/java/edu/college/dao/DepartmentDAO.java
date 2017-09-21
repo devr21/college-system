@@ -45,7 +45,7 @@ public class DepartmentDAO implements IDepartmentDAO{
 		Department dept = null;
 		try{
 			dept = getDepartmentById(department.getDepartmentId());
-			dept.setDepartmenName(department.getDepartmenName());
+			dept.setDepartmentName(department.getDepartmentName());
 			dept.setHeadOfDepartment(department.getHeadOfDepartment());
 			entityManager.flush();
 		}catch(Exception e){

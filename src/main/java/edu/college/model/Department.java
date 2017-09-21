@@ -21,7 +21,7 @@ public class Department implements Serializable{
 	private int departmentId;
 	
 	@Column(name="name")
-	private String departmenName;
+	private String departmentName;
 	
 	@Column(name="hod_name")
 	private String headOfDepartment;
@@ -34,12 +34,12 @@ public class Department implements Serializable{
 		this.departmentId = departmentId;
 	}
 
-	public String getDepartmenName() {
-		return departmenName;
+	public String getDepartmentName() {
+		return departmentName;
 	}
 
-	public void setDepartmenName(String departmenName) {
-		this.departmenName = departmenName;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
 	public String getHeadOfDepartment() {
