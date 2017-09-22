@@ -112,6 +112,25 @@ app.controller("containerCtrl",function($scope,$http){
 	};
 
 	$scope.removeSelected = function(){
+
+		$http({
+			method:'DELETE',
+			url:'system/departments/',
+			data:removeDepartmentList,
+			headers:{
+				'Content-Type':'application/json',
+				'Accept':'application/json'
+			}
+		}).then(function(response){
+			$scope.departments = response.data;
+		},function(error){
+			console.log("error during removing departments \n"+error);
+		});
+		removeDepartmentList = [];
+		$scope.removeBtnDisable = true;
+	};
+
+	$scope.removeSelectedOld = function(){
 		if($scope.departments.length == removeDepartmentList.length){
 			$scope.departments = [];
 			$scope.checkAll = false;

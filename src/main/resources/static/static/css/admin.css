@@ -1,3 +1,6 @@
+button:focus {
+	outline: 0;
+}
 .logo>a{
 	color: #e5e5e5;
 	text-decoration: none;
@@ -30,13 +33,13 @@
 	left: 0;
 	background-color: #111;
 	overflow-x: hidden;
-	padding-top: 60px;
+	padding-top: 50px;
 	transition: 0.5s;
 }
 .sidenav a{
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 10px;
 	color: #818181;
 	display: block;
 	transition: 0.3s 
@@ -44,19 +47,12 @@
 .sidenav a:hover, .offcanvas a:focus{
 	color:#f1f1f1;
 }
-.sidenav .closebtn{
-	position:absolute;
-	top:0;
-	right:25px;
-	font-size:36px;
-	margin-left:50px;
-}
 #main{
 	transition: margin-left 0.5s;
 	padding:20px;
 }
 @media screen and (max-height: 450px){
-	.sidenav{padding-top: 15px;}
+	.sidenav{padding-top: 50px;}
 	.sidenav a{font-size: 18px;}
 }
 @media screen and(max-width: 750px){
@@ -67,6 +63,9 @@ display: block;
 #sidenavCloseBtn{
 	color: #818181;
 	font-size: 18px;
+	margin-top: 10px;
+	position: absolute;
+	right: 0;
 }
 .sidenav .sidebar-active{
 	background-color: #e5e5e5;
@@ -85,9 +84,36 @@ display: block;
 	top: 4em;
 	position:fixed;
 }
-.sidenav-element{
-	margin-top: 10%;
+#sidenavBtn:hover{
+	background-color: #222;
+	color: #e5e5e5;
 }
-.btn-remove{
+.btn-side{
 	margin-top: 2%;
+}
+.btn-side-btn{
+	padding: 2%;
+	background-color: #4d924e;
+	border-style: none;
+	color: white;
+	min-width: 80px;
+	font-size: 14px;
+}
+.btn-side-btn:disabled{
+	cursor: not-allowed;
+	opacity: 0.7;
+}
+.btn-side-btn:hover:enabled{
+	/*box-shadow: -4px 5px 5px rgba(187,187,187,0.82);*/
+	box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+	
+}
+.sidenav-element a{
+	padding: 10px 20%;
+
+}
+@media screen and (max-width: 500px){
+	.btn-name{
+		content: none;
+	}
 }

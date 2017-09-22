@@ -1,5 +1,15 @@
-<h3 class="pull-left" ng-init="initialize()">Departments Page</h3>
-<button title="select some items to delete" class="btn btn-inverse btn-remove pull-right" ng-disabled="removeBtnDisable" ng-click="removeSelected()"><span class="glyphicon glyphicon-trash"></span></button>
+<div class="row">
+<h3 class="pull-left col-md-8 col-xs-6" ng-init="initialize()">Departments Page</h3>
+<div class="btn-side pull-right col-md-4 col-xs-6">
+	<button class="btn-side-btn col-md-5">
+		<span class="btn-name"><h5>Add</h5></span>
+	</button>
+	<span class="col-md-1"></span>
+	<button title="select some items to delete" class="col-md-5 btn-side-btn" ng-disabled="removeBtnDisable" ng-click="removeSelected()">
+		<span class="btn-name"><h5>Remove</h5></span>
+	</button>
+</div>
+</div>
 <table class="table table-striped table-hover">
 	<caption>Academic Departments of ABCD college</caption>
 	<thead>

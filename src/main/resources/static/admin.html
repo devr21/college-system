@@ -5,8 +5,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="static/js/jquery.min.js"></script>
@@ -18,11 +16,13 @@
   <script type="text/javascript">
   	$(function(){
   	 $("#sidenavBtn").on("click",function(){
-  	 	$("#adminSidenav").css("width","20%");
+  	 	/*$(".sidenav").css("transition","0.5s");*/
+  	 	$("#adminSidenav").css("width","20%")/*.css("min-width","230px")*/;
   		$("#main").css("margin-left","20%");
   		$("body").css("background-color","rgba(0,0,0,0.4)");
   	 });
   	$("#sidenavCloseBtn").on("click",function(){
+  		/*$("#adminSidenav").css("min-width","0");*/
   		$("#adminSidenav").css("width","0");
 		$("#main").css("margin-left","0");
 		$("body").css("background-color","white");
@@ -114,11 +114,13 @@
 <span id="sidenavBtn" class="btn glyphicon glyphicon-chevron-right"></span>
 
 <div id="adminSidenav" class="sidenav nav nav-tab" ng-controller="sidebarCtrl">
-	<a href="javascript:void(0)" id="sidenavCloseBtn" class="closebtn glyphicon glyphicon-chevron-left"></a>
+	<div class="sidebar">
+	<a href="javascript:void(0)" id="sidenavCloseBtn" class="pull-right closebtn glyphicon glyphicon-chevron-left"></a>
 	<div class="sidenav-element">
 	<a href="#dashboard" class="" data-toggle="tab">Dashboard</a>
 	<a href="#departments" class="sidebar-active" data-toggle="tab">Departments</a>
 	<a href="#courses" data-toggle="tab">Courses</a>
+</div>
 </div>
 </div>
 <div class="container">
